@@ -30,7 +30,7 @@ const Footer = () => {
 
 	return (
 		<footer>
-			<Container>
+			<Container className="bg-color-black">
 				<Col colStart={[2]} colEnd={[8]} className="text-white">
 					<h2 className="py-1 text-2xl">Want to know more?</h2>
 					<h2 className="py-1 text-2xl">Want to meet us?</h2>
@@ -40,7 +40,7 @@ const Footer = () => {
 				<Col colStart={[10]} colEnd={14}>
 					<ul className="flex flex-col">
 						{links.map(({ name, href }, index) => (
-							<Link key={name + index} href={href} className="my-2 font-bold text-white uppercase text-md font-jetbrains">
+							<Link key={name + index} href={href} className="my-2 text-sm font-bold text-white uppercase font-jetbrains">
 								{name}
 							</Link>
 						))}
@@ -53,11 +53,6 @@ const Footer = () => {
 							<span className="ml-4 text-white">{description}</span>
 						</p>
 					))}
-				</Col>
-			</Container>
-			<Container>
-				<Col>
-					<img src="" alt="logo behermangroup small" />
 				</Col>
 			</Container>
 		</footer>

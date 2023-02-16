@@ -25,7 +25,7 @@ const footerLinksDefault = [
 
 const FooterCaracal = ({ companyLogo, footerLinks = footerLinksDefault }: { companyLogo: string; footerLinks?: LinksType[] }) => {
 	return (
-		<Container className="flex">
+		<Container className="flex bg-color-black">
 			<Col colStart={[2]} colEnd={[4]}>
 				<img src={companyLogo} alt="the company logo" className="" />
 			</Col>

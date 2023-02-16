@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import Col from './comps/Layout/Col';
-import Container from './comps/Layout/Container';
+import Col from './Layout/Col';
+import Container from './Layout/Container';
 
 const links = [
 	{

@@ -39,9 +39,9 @@ module.exports = {
 			gridTemplateColumns: {
 				container: '[full-start] minmax(calc(calc(100% - 1440px) / 2), 1fr) [main-start] repeat(24, [col-start] 1fr) [main-end] minmax(calc(calc(100% - 1440px) / 2), 1fr) [full-end]',
 			},
-			// colors: {
-			// 	'main-background': '#070d31',
-			// },
+			colors: {
+				'main-background': '#070d31',
+			},
 		},
 	},
 	plugins: [],

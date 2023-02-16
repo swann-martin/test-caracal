@@ -2,6 +2,9 @@ import '../styles/global.css';
 
 import localFont from '@next/font/local';
 import type { AppProps } from 'next/app';
+import NavBar from '../comps/NavBar';
+import Footer from '../comps/Footer';
+import FooterCaracal from '../comps/FooterCaracal';
 
 const jetbrains = localFont({
 	src: [
@@ -32,8 +35,11 @@ const karla = localFont({
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
-		<div className={`${karla.variable} ${jetbrains.variable} font-karla`}>
+		<div className={`${karla.variable} ${jetbrains.variable} font-karla bg-main-background`}>
+			<NavBar />
 			<Component {...pageProps} />
+			<Footer />
+			<FooterCaracal companyLogo="/icons/logo-beherman-corpo.svg" />
 		</div>
 	);
 }

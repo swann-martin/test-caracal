@@ -39,6 +39,15 @@ module.exports = {
 			gridTemplateColumns: {
 				container: '[full-start] minmax(calc(calc(100% - 1440px) / 2), 1fr) [main-start] repeat(24, [col-start] 1fr) [main-end] minmax(calc(calc(100% - 1440px) / 2), 1fr) [full-end]',
 			},
+			colors: {
+				'main-background': '#070d31',
+				'color-link-gray': '#ABAFB7',
+				'color-secondary': '#488BBC',
+				'color-accent': '#8BC0F1',
+				'color-accent2': '#488BBC',
+				'color-line': '#23334C',
+				'color-black': '#04081F',
+			},
 		},
 	},
 	plugins: [],

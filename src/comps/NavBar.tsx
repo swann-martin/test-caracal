@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import Col from './Layout/Col';
 import Container from './Layout/Container';
 
-const links = [
+export const links = [
 	{
 		name: 'Home',
 		href: '/',
@@ -28,8 +29,9 @@ const links = [
 ];
 
 const NavBar = () => {
+	const router = useRouter();
 	return (
-		<nav className="flex sticky top-0 left-0 flex-wrap justify-between items-center py-2 w-full z-2 sm:px-6 lg:px-8">
+		<nav className="flex sticky top-0 left-0 flex-wrap justify-between items-center py-4 w-full z-2 sm:px-6 lg:px-8 bg-main-background">
 			<Container className="flex items-center">
 				<Col colEnd={[16, 8]} className="min-h-32">
 					<Link href={'/'}>
@@ -37,7 +39,7 @@ const NavBar = () => {
 					</Link>
 				</Col>
 				<Col colStart={[14, 16, 16]} colEnd={[24]} className="hidden md:flex">
-					<div className="flex justify-around mx-3">
+					<div className="flex items-center">
 						{links.map(({ name, href }, index) =>
 							index === links.length - 1 ? (
 								<div key={`${name}${index}`}>
@@ -47,7 +49,12 @@ const NavBar = () => {
 								</div>
 							) : (
 								<div key={`${name}${index}`}>
-									<Link href={href} className="mx-1 font-bold text-white hover:border-spacing-y-28 hover:border-blue-300 hover:border-b-2">
+									<Link
+										href={href}
+										className={`mr-4 font-bold text-white hover:border-spacing-y-28  ${
+											router.pathname === href ? 'border-blue-300 border-b-2 border-spacing-24' : 'hover:border-blue-300 hover:border-b-2'
+										}`}
+									>
 										{name}
 									</Link>
 								</div>

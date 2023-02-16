@@ -1,12 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
+import { LinksType } from '../utils/types';
 import Col from './Layout/Col';
 import Container from './Layout/Container';
-
-type linksType = {
-	name: string;
-	href: string;
-};
 
 const footerLinksDefault = [
 	{
@@ -27,7 +23,7 @@ const footerLinksDefault = [
 	},
 ];
 
-const FooterCaracal = ({ companyLogo, footerLinks = footerLinksDefault }: { companyLogo: string; footerLinks?: linksType[] }) => {
+const FooterCaracal = ({ companyLogo, footerLinks = footerLinksDefault }: { companyLogo: string; footerLinks?: LinksType[] }) => {
 	return (
 		<Container className="flex">
 			<Col colStart={[2]} colEnd={[4]}>

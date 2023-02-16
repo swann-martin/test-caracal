@@ -41,6 +41,9 @@ module.exports = {
 			},
 			colors: {
 				'main-background': '#070d31',
+				'color-link-gray': '#ABAFB7',
+				'color-secondary': '#488BBC',
+				'color-accent': '#8BC0F1',
 			},
 		},
 	},

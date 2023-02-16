@@ -30,15 +30,15 @@ const Footer = () => {
 
 	return (
 		<footer>
-			<Container className="bg-color-black">
-				<Col colStart={[2]} colEnd={[8]} className="text-white">
+			<Container className="items-center bg-color-black">
+				<Col colStart={[2]} colEnd={[24, 8]} className="py-2 text-white">
 					<h2 className="py-1 text-2xl">Want to know more?</h2>
 					<h2 className="py-1 text-2xl">Want to meet us?</h2>
 					<h2 className="py-1 text-2xl"> Be part of the adventure?</h2>
-					<ButtonContact className="py-2" />
+					<ButtonContact className="py-2 my-3" />
 				</Col>
-				<Col colStart={[10]} colEnd={14}>
-					<ul className="flex flex-col">
+				<Col colStart={[2, 10]} colEnd={[24, 14]}>
+					<ul className="hidden flex-col md:flex">
 						{links.map(({ name, href }, index) => (
 							<Link key={name + index} href={href} className="my-2 text-sm font-bold text-white uppercase font-jetbrains">
 								{name}
@@ -46,7 +46,8 @@ const Footer = () => {
 						))}
 					</ul>
 				</Col>
-				<Col colStart={[18]}>
+				<Col colStart={[2, 18]} className="sm:my-2">
+					<h2 className="my-2 w-1/2 text-white">{adress.street}</h2>
 					{adress.contacts.map(({ icon, description, type }) => (
 						<p className="flex justify-start items-center">
 							<Image src={icon} alt={`icon of ${type}`} width={16} height={16} />

@@ -26,11 +26,11 @@ const footerLinksDefault = [
 const FooterCaracal = ({ companyLogo, footerLinks = footerLinksDefault }: { companyLogo: string; footerLinks?: LinksType[] }) => {
 	return (
 		<Container className="flex bg-color-black">
-			<Col colStart={[2]} colEnd={[4]}>
-				<img src={companyLogo} alt="the company logo" className="" />
+			<Col colStart={[2]} colEnd={[14, 4]}>
+				<img src={companyLogo} alt="the company logo" className="h-36" />
 			</Col>
 
-			<Col colStart={[10]} colEnd={[22]} className="flex flex-row justify-around">
+			<Col colStart={[2, 10]} colEnd={[22]} className="flex flex-row justify-around">
 				{footerLinks.map(({ name, href }) => (
 					<span className="p-1 border-r border-color-link-gray">
 						<Link href={href} className="text-sm text-color-link-gray">
@@ -39,7 +39,7 @@ const FooterCaracal = ({ companyLogo, footerLinks = footerLinksDefault }: { comp
 					</span>
 				))}
 			</Col>
-			<Col colStart={[22]} colEnd={[24]}>
+			<Col colStart={[2, 22]} colEnd={[24]}>
 				<img src="/icons/caracal-logo2.svg" alt="the company logo" className="" />
 			</Col>
 		</Container>

@@ -30,7 +30,7 @@ const About: NextPage = () => {
 	const board = {
 		title: 'The Board',
 		image: '/images/board.jpg',
-		subtitle: 'From Left to right',
+		subtitle: 'Left to right',
 		text: [
 			{ name: 'Paul Borghgraef', position: 'Director' },
 			{ name: 'Christian Beherman', position: 'President' },
@@ -58,12 +58,12 @@ const About: NextPage = () => {
 				<Col className="my-6" colStart={[2, null, 2, null, 2]}>
 					<h1 className="text-4xl font-bold text-white uppercase font-jetbrains">{board.title}</h1>
 				</Col>
-				<Col className="" colStart={[2]} colEnd={[26, null, 17, null, 17]}>
+				<Col className="" colStart={[1, 2]} colEnd={[26, null, 17, null, 17]}>
 					<img src={board.image} alt="image of building headquarter" />
 				</Col>
 
-				<Col className="flex justify-center text-justify md:border-l md:border-l-color-line" colStart={[2, null, 18, null, 18]}>
-					<h2 className="text-sm text-white uppercase">{board.subtitle}</h2>
+				<Col className="flex my-2 text-justify md:my-0 md:justify-center md:border-l md:border-l-color-line" colStart={[2, null, 18, null, 18]}>
+					<h2 className="text-sm font-bold text-white uppercase font-karla">{board.subtitle}</h2>
 
 					{board?.text.map((item, i) => (
 						<div key={`${item}-${i}`} className="my-1">

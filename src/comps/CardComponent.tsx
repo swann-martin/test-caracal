@@ -27,7 +27,7 @@ const CardComponent = ({ prop, imageRight = false, className }: { prop: CardProp
 						<h1 className="text-4xl font-bold text-white uppercase font-jetbrains">{prop.title}</h1>
 					</Col>
 
-					<Col className="" colStart={[2]} colEnd={[26, null, 14, null, 14]}>
+					<Col className="" colStart={[1, 2]} colEnd={[26, null, 14, null, 14]}>
 						<img src={prop.image} alt="image of building headquarter" />
 					</Col>
 					<Col className="" colStart={[2, null, 18, null, 18]}>

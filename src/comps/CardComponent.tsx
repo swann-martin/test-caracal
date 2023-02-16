@@ -13,11 +13,11 @@ const CardComponent = ({ prop, imageRight = false, className }: { prop: CardProp
 					</Col>
 					<Col className="" colStart={[2]} colEnd={[26, null, 14, null, 14]}>
 						<div>
-							<h2 className="text-blue-300">{prop.subtitle}</h2>
+							<h2 className="mb-10 text-2xl text-blue-300">{prop.subtitle}</h2>
 						</div>
-						<p className="text-justify text-gray-300">{prop.text}</p>
+						<p className="text-base text-justify text-gray-300">{prop.text}</p>
 					</Col>
-					<Col className="" colStart={[16, null, 18, null, 18]}>
+					<Col className="" colStart={[1, null, 18, null, 18]} colEnd={[26]}>
 						<img src={prop.image} alt="image of building headquarter" />
 					</Col>
 				</>
@@ -30,11 +30,11 @@ const CardComponent = ({ prop, imageRight = false, className }: { prop: CardProp
 					<Col className="" colStart={[2]} colEnd={[26, null, 14, null, 14]}>
 						<img src={prop.image} alt="image of building headquarter" />
 					</Col>
-					<Col className="" colStart={[16, null, 18, null, 18]}>
+					<Col className="" colStart={[2, null, 18, null, 18]}>
 						<div>
-							<h2 className="text-blue-300">{prop.subtitle}</h2>
+							<h2 className="mb-10 text-2xl text-blue-300">{prop.subtitle}</h2>
 						</div>
-						<p className="text-justify text-gray-300">{prop.text}</p>
+						<p className="text-base text-justify text-gray-300">{prop.text}</p>
 					</Col>
 				</>
 			)}

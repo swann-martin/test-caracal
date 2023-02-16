@@ -62,7 +62,7 @@ const About: NextPage = () => {
 					<img src={board.image} alt="image of building headquarter" />
 				</Col>
 
-				<Col className="flex justify-center text-justify border-l border-l-color-line" colStart={[19, null, 18, null, 18]}>
+				<Col className="flex justify-center text-justify md:border-l md:border-l-color-line" colStart={[2, null, 18, null, 18]}>
 					<h2 className="text-sm text-white uppercase">{board.subtitle}</h2>
 
 					{board?.text.map((item, i) => (

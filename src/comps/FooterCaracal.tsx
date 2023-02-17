@@ -30,16 +30,18 @@ const FooterCaracal = ({ companyLogo, footerLinks = footerLinksDefault }: { comp
 				<img src={companyLogo} alt="the company logo" className="h-36" />
 			</Col>
 
-			<Col colStart={[2, 10]} colEnd={[22]} className="flex flex-row justify-around">
-				{footerLinks.map(({ name, href }) => (
-					<span className="p-1 border-r border-color-link-gray">
-						<Link href={href} className="text-sm text-color-link-gray">
-							{name}
-						</Link>
-					</span>
-				))}
+			<Col colStart={[2, 10]} colEnd={[22]} className="flex flex-row justify-around items-center">
+				<div>
+					{footerLinks.map(({ name, href }) => (
+						<span className="p-1 border-r border-color-link-gray">
+							<Link href={href} className="mx-2 text-sm text-color-link-gray">
+								{name}
+							</Link>
+						</span>
+					))}
+				</div>
 			</Col>
-			<Col colStart={[2, 22]} colEnd={[24]}>
+			<Col colStart={[2, 22]} colEnd={[24]} className="items-center">
 				<img src="/icons/caracal-logo2.svg" alt="the company logo" className="" />
 			</Col>
 		</Container>

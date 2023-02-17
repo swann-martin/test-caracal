@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useState } from 'react';
 import Col from './Layout/Col';
 import Container from './Layout/Container';
+import motion from 'framer-motion';
 
 export const links = [
 	{
@@ -30,6 +31,8 @@ export const links = [
 
 const NavBar = () => {
 	const router = useRouter();
+
+	const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
 	return (
 		<nav className="flex sticky top-0 left-0 flex-wrap justify-between items-center py-4 w-full z-2 sm:px-6 lg:px-8 bg-main-background">
 			<Container className="flex items-center">
@@ -62,16 +65,34 @@ const NavBar = () => {
 						)}
 					</div>
 				</Col>
+
+				{isOpenMenu && (
+					<Col colStart={[2]} colEnd={[24]} className="absolute right-0 top-14 w-full backdrop-blur-sm md:hidden">
+						<div className="flex flex-col items-justify">
+							{links.map(({ name, href }, index) => (
+								<div key={`${name}${index}`} className="flex justify-center my-2">
+									<Link href={href} className={`mr-4 text-3xl font-bold text-white hover:border-spacing-y-28 ${'hover:text-blue-300 hover:border-y-2'}`}>
+										{name}
+									</Link>
+								</div>
+							))}
+						</div>
+					</Col>
+				)}
 				<Col colStart={[24, null, null]} colEnd={[24]}>
 					<button
 						onClick={() => {
-							console.log('clicked button');
+							setIsOpenMenu(!isOpenMenu);
 						}}
 						className="block p-2 bg-blue-300 rounded-full md:hidden"
 					>
-						<svg xmlns="<http://www.w3.org/2000/svg>" id="menu-button" className="block w-6 h-6 cursor-pointer md:hidden" fill="none" viewBox="0 0 24 24" stroke="white">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-						</svg>
+						{isOpenMenu ? (
+							<span className="block w-6 h-6 font-bold text-white cursor-pointer md:hidden">X</span>
+						) : (
+							<svg xmlns="<http://www.w3.org/2000/svg>" id="menu-button" className="block w-6 h-6 cursor-pointer md:hidden" fill="none" viewBox="0 0 24 24" stroke="white">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+							</svg>
+						)}
 					</button>
 				</Col>
 			</Container>

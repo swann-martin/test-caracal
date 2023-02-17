@@ -52,7 +52,7 @@ const About: NextPage = () => {
 				</Col>
 			</Container>
 			<CardComponent prop={vision} />
-			<BannerComponent />
+			<BannerComponent message="Are you looking for a reference partner to develop your mobility activities?" />
 			<CardComponent prop={comitment} imageRight />
 			<Container>
 				<Col className="my-6" colStart={[2, null, 2, null, 2]}>

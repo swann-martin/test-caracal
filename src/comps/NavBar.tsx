@@ -71,9 +71,15 @@ const NavBar = () => {
 						<div className="flex flex-col items-justify">
 							{links.map(({ name, href }, index) => (
 								<div key={`${name}${index}`} className="flex justify-center my-2">
-									<Link href={href} className={`mr-4 text-3xl font-bold text-white hover:border-spacing-y-28 ${'hover:text-blue-300 hover:border-y-2'}`}>
+									<p
+										onClick={() => {
+											router.push(`${href}`);
+											setIsOpenMenu(false);
+										}}
+										className={`mr-4 text-3xl font-bold text-white cursor-pointer hover:border-spacing-y-28 ${'hover:text-blue-300 hover:border-y-2'}`}
+									>
 										{name}
-									</Link>
+									</p>
 								</div>
 							))}
 						</div>

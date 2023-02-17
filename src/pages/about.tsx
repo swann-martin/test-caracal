@@ -46,8 +46,8 @@ const About: NextPage = () => {
 				<title>Caracal Agency</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Container className="h-80">
-				<Col className="p-2 my-3" colEnd={[25, null, 18, null, 18]}>
+			<Container className="flex items-center md:h-96">
+				<Col className="p-2" colStart={[2, 4]} colEnd={[24, null, 18, null, 18]}>
 					<h1 className="text-6xl font-bold text-white uppercase font-jetbrains text-start">{heroTitle}</h1>
 				</Col>
 			</Container>

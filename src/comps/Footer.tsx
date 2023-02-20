@@ -49,7 +49,7 @@ const Footer = () => {
 				<Col colStart={[2, 18]} className="sm:my-2">
 					<h2 className="my-2 w-1/2 text-white">{adress.street}</h2>
 					{adress.contacts.map(({ icon, description, type }) => (
-						<p className="flex justify-start items-center">
+						<p key={description} className="flex justify-start items-center">
 							<Image src={icon} alt={`icon of ${type}`} width={16} height={16} />
 							<span className="ml-4 text-white">{description}</span>
 						</p>

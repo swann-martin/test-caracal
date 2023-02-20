@@ -33,7 +33,7 @@ const FooterCaracal = ({ companyLogo, footerLinks = footerLinksDefault }: { comp
 			<Col colStart={[2, 10]} colEnd={[22]} className="flex flex-row justify-around items-center">
 				<div>
 					{footerLinks.map(({ name, href }) => (
-						<span className="p-1 border-r border-color-link-gray">
+						<span key={`${name}-${href}`} className="p-1 border-r border-color-link-gray">
 							<Link href={href} className="mx-2 text-sm text-color-link-gray">
 								{name}
 							</Link>

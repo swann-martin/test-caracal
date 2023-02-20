@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -5,7 +6,6 @@ import React, { useState } from 'react';
 
 import Col from './Layout/Col';
 import Container from './Layout/Container';
-
 export const links = [
 	{
 		name: 'Home',
@@ -32,6 +32,10 @@ export const links = [
 const NavBar = () => {
 	const router = useRouter();
 
+	const variants = {
+		open: { opacity: 1, x: 0 },
+		closed: { opacity: 0, x: '-100%' },
+	};
 	const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
 	return (
 		<nav className="flex sticky top-0 left-0 flex-wrap justify-between items-center py-4 w-full z-2 sm:px-6 lg:px-8 bg-main-background">
@@ -66,9 +70,9 @@ const NavBar = () => {
 					</div>
 				</Col>
 
-				{isOpenMenu && (
-					<Col colStart={[2]} colEnd={[24]} className="absolute right-0 top-14 w-full backdrop-blur-sm md:hidden">
-						<div className="flex flex-col items-justify">
+				{
+					<Col colStart={[2]} colEnd={[24]} className="absolute right-0 top-14 w-full md:hidden">
+						<motion.div className="flex flex-col backdrop-blur-sm items-justify" animate={isOpenMenu ? 'open' : 'closed'} variants={variants}>
 							{links.map(({ name, href }, index) => (
 								<div key={`${name}${index}`} className="flex justify-center my-2">
 									<p
@@ -82,9 +86,9 @@ const NavBar = () => {
 									</p>
 								</div>
 							))}
-						</div>
+						</motion.div>
 					</Col>
-				)}
+				}
 				<Col colStart={[24, null, null]} colEnd={[24]}>
 					<button
 						onClick={() => {

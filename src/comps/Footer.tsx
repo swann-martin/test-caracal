@@ -6,7 +6,7 @@ import ButtonContact from './ButtonContact';
 import Col from './Layout/Col';
 import Container from './Layout/Container';
 import { links } from './NavBar';
-const Footer = () => {
+const Footer = ({ className }: { className?: string }) => {
 	const adress = {
 		street: 'INDUSTRIEWEG, 3 2880 BORNEM BELGIUM',
 
@@ -30,12 +30,12 @@ const Footer = () => {
 	};
 
 	return (
-		<footer>
+		<footer className={`${className}`}>
 			<Container className="items-center bg-color-black">
 				<Col colStart={[2]} colEnd={[24, 8]} className="py-2 text-white">
 					<h2 className="py-1 text-2xl">Want to know more?</h2>
 					<h2 className="py-1 text-2xl">Want to meet us?</h2>
-					<h2 className="py-1 text-2xl"> Be part of the adventure?</h2>
+					<h2 className="py-1 text-2xl">Be part of the adventure?</h2>
 					<ButtonContact className="py-2 my-3" />
 				</Col>
 				<Col colStart={[2, 10]} colEnd={[24, 14]}>
@@ -47,12 +47,14 @@ const Footer = () => {
 						))}
 					</ul>
 				</Col>
-				<Col colStart={[2, 18]} className="sm:my-2">
+				<Col colStart={[2, 14, 15, 18]} className="sm:my-2">
 					<h2 className="my-2 w-1/2 text-white">{adress.street}</h2>
 					{adress.contacts.map(({ icon, description, type }) => (
 						<p key={description} className="flex justify-start items-center">
 							<Image src={icon} alt={`icon of ${type}`} width={16} height={16} />
-							<span className="ml-4 text-white">{description}</span>
+							<Link href={type === 'email' ? `mailto:${description}` : `tel:${description}`} className="ml-4 text-white">
+								{description}
+							</Link>
 						</p>
 					))}
 				</Col>

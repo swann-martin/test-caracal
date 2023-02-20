@@ -29,7 +29,7 @@ const FooterCaracal = ({ companyLogo, footerLinks = footerLinksDefault }: { comp
 	return (
 		<Container className="flex bg-color-black">
 			<Col colStart={[2]} colEnd={[14, 4]}>
-				<Image src={companyLogo} alt="the company logo" className="h-36" />
+				<Image src={companyLogo} alt="the company logo" className="h-36" width={132} height={15} />
 			</Col>
 
 			<Col colStart={[2, 10]} colEnd={[22]} className="flex flex-row justify-around items-center">
@@ -44,7 +44,7 @@ const FooterCaracal = ({ companyLogo, footerLinks = footerLinksDefault }: { comp
 				</div>
 			</Col>
 			<Col colStart={[2, 22]} colEnd={[24]} className="items-center">
-				<Image src="/icons/caracal-logo2.svg" alt="the company logo" className="" />
+				<Image src="/icons/caracal-logo2.svg" alt="the company logo" className="" width={45} height={19} />
 			</Col>
 		</Container>
 	);

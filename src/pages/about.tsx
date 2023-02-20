@@ -57,7 +57,7 @@ const About: NextPage = () => {
 					<h1 className="text-4xl font-bold text-white uppercase font-jetbrains">{board.title}</h1>
 				</Col>
 				<Col className="" colStart={[1, 2]} colEnd={[26, null, 17, null, 17]}>
-					<Image src={board.image} alt="image of building headquarter" />
+					<Image src={board.image} alt="image of building headquarter" width={887} height={508} />
 				</Col>
 
 				<Col className="flex my-2 text-justify md:my-0 md:justify-center md:border-l md:border-l-color-line" colStart={[2, null, 18, null, 18]}>

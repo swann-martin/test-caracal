@@ -2,6 +2,7 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
+
 import Col from '../comps/Layout/Col';
 import Container from '../comps/Layout/Container';
 

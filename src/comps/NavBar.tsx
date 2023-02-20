@@ -2,9 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+
 import Col from './Layout/Col';
 import Container from './Layout/Container';
-import motion from 'framer-motion';
 
 export const links = [
 	{
@@ -76,7 +76,7 @@ const NavBar = () => {
 											router.push(`${href}`);
 											setIsOpenMenu(false);
 										}}
-										className={`mr-4 text-3xl font-bold text-white cursor-pointer hover:border-spacing-y-28 ${'hover:text-blue-300 hover:border-y-2'}`}
+										className={`mr-4 text-3xl font-bold text-white cursor-pointer hover:border-spacing-y-28 border-y-2 ${'hover:text-blue-300 hover:border-y-2'}`}
 									>
 										{name}
 									</p>
@@ -93,10 +93,25 @@ const NavBar = () => {
 						className="block p-2 bg-blue-300 rounded-full md:hidden"
 					>
 						{isOpenMenu ? (
-							<span className="block w-6 h-6 font-bold text-white cursor-pointer md:hidden">X</span>
+							<span className="block w-6 h-6 font-bold text-white cursor-pointer md:hidden">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" enable-background="new 0 0 40 40">
+									<line x1="15" y1="15" x2="25" y2="25" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10"></line>
+									<line x1="25" y1="15" x2="15" y2="25" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10"></line>
+									<circle className="circle" cx="20" cy="20" r="19" opacity="0" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10" fill="none"></circle>
+									<path
+										d="M20 1c10.45 0 19 8.55 19 19s-8.55 19-19 19-19-8.55-19-19 8.55-19 19-19z"
+										className="progress"
+										stroke="#fff"
+										stroke-width="2.5"
+										stroke-linecap="round"
+										stroke-miterlimit="10"
+										fill="none"
+									></path>
+								</svg>
+							</span>
 						) : (
 							<svg xmlns="<http://www.w3.org/2000/svg>" id="menu-button" className="block w-6 h-6 cursor-pointer md:hidden" fill="none" viewBox="0 0 24 24" stroke="white">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
 							</svg>
 						)}
 					</button>

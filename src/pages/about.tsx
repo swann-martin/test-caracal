@@ -1,15 +1,13 @@
-import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
+import React from 'react';
 
+import BannerComponent from '../comps/BannerComponent';
+import CardComponent from '../comps/CardComponent';
 import Col from '../comps/Layout/Col';
 import Container from '../comps/Layout/Container';
-import NavBar from '../comps/NavBar';
-import CardComponent from '../comps/CardComponent';
 import { CardPropType } from '../utils/types';
-import BannerComponent from '../comps/BannerComponent';
 
 const About: NextPage = () => {
 	const heroTitle = 'Nearly a century driven by a passion for excellence';
@@ -27,7 +25,7 @@ const About: NextPage = () => {
 		subtitle: 'In a world committed to the ecological transition, we want to make our contribution by building the mobility solutions of tomorrow.',
 		text: 'The brands we are working with today, Fuso and Piaggio, are paving the way for new ways of conceiving transportation, on roads all over the world, at city entrances and even within urban traffic.',
 	};
-	const board = {
+	const board: CardPropType = {
 		title: 'The Board',
 		image: '/images/board.jpg',
 		subtitle: 'Left to right',
@@ -59,21 +57,21 @@ const About: NextPage = () => {
 					<h1 className="text-4xl font-bold text-white uppercase font-jetbrains">{board.title}</h1>
 				</Col>
 				<Col className="" colStart={[1, 2]} colEnd={[26, null, 17, null, 17]}>
-					<img src={board.image} alt="image of building headquarter" />
+					<Image src={board.image} alt="image of building headquarter" />
 				</Col>
 
 				<Col className="flex my-2 text-justify md:my-0 md:justify-center md:border-l md:border-l-color-line" colStart={[2, null, 18, null, 18]}>
 					<h2 className="text-sm font-bold text-white uppercase font-karla">{board.subtitle}</h2>
 
-					{board?.text.map((item, i) => (
-						<div key={`${item}-${i}`} className="my-1">
-							<h3 className="text-base text-white">{item?.name}</h3>
-							<h4 className="text-sm text-color-accent2">{item?.position}</h4>
-						</div>
-					))}
+					{typeof board?.text !== 'string' &&
+						board?.text.map((item, i) => (
+							<div key={`${item}-${i}`} className="my-1">
+								<h3 className="text-base text-white">{item?.name}</h3>
+								<h4 className="text-sm text-color-accent2">{item?.position}</h4>
+							</div>
+						))}
 				</Col>
 			</Container>
-			//footer
 		</div>
 	);
 };

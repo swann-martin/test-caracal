@@ -2,7 +2,7 @@ export type CardPropType = {
 	title: string;
 	image: string;
 	subtitle: string;
-	text: string;
+	text: string | { name: string; position: string }[];
 };
 
 export type LinksType = {

@@ -2,9 +2,10 @@ import '../styles/global.css';
 
 import localFont from '@next/font/local';
 import type { AppProps } from 'next/app';
-import NavBar from '../comps/NavBar';
+
 import Footer from '../comps/Footer';
 import FooterCaracal from '../comps/FooterCaracal';
+import NavBar from '../comps/NavBar';
 
 const jetbrains = localFont({
 	src: [

@@ -35,7 +35,7 @@ const Footer = () => {
 				<Col colStart={[2]} colEnd={[24, 8]} className="py-2 text-white">
 					<h2 className="py-1 text-2xl">Want to know more?</h2>
 					<h2 className="py-1 text-2xl">Want to meet us?</h2>
-					<h2 className="py-1 text-2xl"> Be part of the adventure?</h2>
+					<h2 className="py-1 text-2xl">Be part of the adventure?</h2>
 					<ButtonContact className="py-2 my-3" />
 				</Col>
 				<Col colStart={[2, 10]} colEnd={[24, 14]}>

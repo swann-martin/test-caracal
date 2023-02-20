@@ -50,7 +50,12 @@ const NavBar = () => {
 						{links.map(({ name, href }, index) =>
 							index === links.length - 1 ? (
 								<div key={`${name}${index}`}>
-									<Link href={href} className="px-3 py-2 bg-white rounded-3xl">
+									<Link
+										href={href}
+										className={`px-3 py-2 bg-white rounded-3xl font-bold transition-all ease-in-out delay-150 ${
+											router.pathname === href ? 'bg-blue-300  text-white' : 'hover:bg-blue-300 hover:text-white'
+										}`}
+									>
 										{name}
 									</Link>
 								</div>
@@ -58,8 +63,8 @@ const NavBar = () => {
 								<div key={`${name}${index}`}>
 									<Link
 										href={href}
-										className={`mr-4 font-bold text-white hover:border-spacing-y-28  ${
-											router.pathname === href ? 'border-blue-300 border-b-2 border-spacing-24' : 'hover:border-blue-300 hover:border-b-2'
+										className={`mr-4 font-bold text-white hover:border-spacing-y-28 border-blue-300 transition-all ease-in-out delay-150 ${
+											router.pathname === href ? ' border-b-2 border-spacing-24' : 'hover:border-blue-300 hover:border-b-2'
 										}`}
 									>
 										{name}

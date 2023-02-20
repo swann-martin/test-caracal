@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+
 import { LinksType } from '../utils/types';
 import Col from './Layout/Col';
 import Container from './Layout/Container';
@@ -27,7 +29,7 @@ const FooterCaracal = ({ companyLogo, footerLinks = footerLinksDefault }: { comp
 	return (
 		<Container className="flex bg-color-black">
 			<Col colStart={[2]} colEnd={[14, 4]}>
-				<img src={companyLogo} alt="the company logo" className="h-36" />
+				<Image src={companyLogo} alt="the company logo" className="h-36" />
 			</Col>
 
 			<Col colStart={[2, 10]} colEnd={[22]} className="flex flex-row justify-around items-center">
@@ -42,7 +44,7 @@ const FooterCaracal = ({ companyLogo, footerLinks = footerLinksDefault }: { comp
 				</div>
 			</Col>
 			<Col colStart={[2, 22]} colEnd={[24]} className="items-center">
-				<img src="/icons/caracal-logo2.svg" alt="the company logo" className="" />
+				<Image src="/icons/caracal-logo2.svg" alt="the company logo" className="" />
 			</Col>
 		</Container>
 	);

@@ -1,8 +1,9 @@
+import { motion, useScroll } from 'framer-motion';
 import React from 'react';
+
 import ButtonContact from './ButtonContact';
 import Col from './Layout/Col';
 import Container from './Layout/Container';
-import { motion, useScroll } from 'framer-motion';
 
 const BannerComponent = ({ message }: { message: string }) => {
 	const { scrollYProgress } = useScroll();

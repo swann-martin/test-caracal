@@ -2,9 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+
 import Col from './Layout/Col';
 import Container from './Layout/Container';
-import motion from 'framer-motion';
 
 export const links = [
 	{

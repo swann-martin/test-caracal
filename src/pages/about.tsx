@@ -1,14 +1,13 @@
-import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
+import React from 'react';
 
+import BannerComponent from '../comps/BannerComponent';
+import CardComponent from '../comps/CardComponent';
 import Col from '../comps/Layout/Col';
 import Container from '../comps/Layout/Container';
-import CardComponent from '../comps/CardComponent';
 import { CardPropType } from '../utils/types';
-import BannerComponent from '../comps/BannerComponent';
 
 const About: NextPage = () => {
 	const heroTitle = 'Nearly a century driven by a passion for excellence';
@@ -58,7 +57,7 @@ const About: NextPage = () => {
 					<h1 className="text-4xl font-bold text-white uppercase font-jetbrains">{board.title}</h1>
 				</Col>
 				<Col className="" colStart={[1, 2]} colEnd={[26, null, 17, null, 17]}>
-					<img src={board.image} alt="image of building headquarter" />
+					<Image src={board.image} alt="image of building headquarter" />
 				</Col>
 
 				<Col className="flex my-2 text-justify md:my-0 md:justify-center md:border-l md:border-l-color-line" colStart={[2, null, 18, null, 18]}>

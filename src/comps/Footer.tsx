@@ -6,7 +6,7 @@ import ButtonContact from './ButtonContact';
 import Col from './Layout/Col';
 import Container from './Layout/Container';
 import { links } from './NavBar';
-const Footer = () => {
+const Footer = ({ className }: { className?: string }) => {
 	const adress = {
 		street: 'INDUSTRIEWEG, 3 2880 BORNEM BELGIUM',
 
@@ -30,7 +30,7 @@ const Footer = () => {
 	};
 
 	return (
-		<footer>
+		<footer className={`${className}`}>
 			<Container className="items-center bg-color-black">
 				<Col colStart={[2]} colEnd={[24, 8]} className="py-2 text-white">
 					<h2 className="py-1 text-2xl">Want to know more?</h2>

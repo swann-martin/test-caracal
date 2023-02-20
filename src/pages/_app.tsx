@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 		<div className={`${karla.variable} ${jetbrains.variable} font-karla bg-main-background`}>
 			<NavBar />
 			<Component {...pageProps} />
-			<Footer />
+			<Footer className="mt-5" />
 			<FooterCaracal companyLogo="/icons/logo-beherman-corpo.svg" />
 		</div>
 	);

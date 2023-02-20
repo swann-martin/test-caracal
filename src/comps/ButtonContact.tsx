@@ -7,7 +7,7 @@ const ButtonContact = ({ className, text = 'Contact Us' }: { className?: string;
 		<Link href="/contact" className="flex justify-between items-center">
 			<p className={`flex px-3 py-2 rounded-3xl border-2 border-color-accent ${className}`}>
 				<span className="mx-2 uppercase">{text}</span>
-				<Image src="/icons/arrow.svg" alt="icon of an arrow" />
+				<Image src="/icons/arrow.svg" alt="icon of an arrow" width={29} height={10} />
 			</p>
 		</Link>
 	);
